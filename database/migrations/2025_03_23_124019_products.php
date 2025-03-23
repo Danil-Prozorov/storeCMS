@@ -38,7 +38,7 @@ return new class extends Migration
             $table->boolean('available');
         });
 
-        Schema::create('products_seo',function(Bluprint $table){
+        Schema::create('products_seo',function(Blueprint $table){
             $table->id();
             $table->integer('product_id')->unique();
             $table->string('seo_title',256);
