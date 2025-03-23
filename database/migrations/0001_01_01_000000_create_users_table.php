@@ -17,7 +17,21 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->boolean('isAdmin');
+            $table->boolean('isCourier');
+            $table->boolean('activity');
             $table->rememberToken();
+            $table->timestamps();
+        });
+
+        Schema::create('courier_data',function(Blueprint $table){
+            $table->id();
+            $table->integer('courier_user_id');
+            $table->string('passport_series');
+            $table->string('passport_number');
+            $table->string('profile_pic_url');
+            $table->string('payment_cart_num');
+            $table->string('payment_bank_num');
             $table->timestamps();
         });
 
